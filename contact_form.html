@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 20px;
+}
+
+
+form {
+    background-color: #ffffff;
+    max-width: 500px;
+    margin: auto;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form textarea,
+form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+
+form input[type="checkbox"] {
+    margin-right: 10px;
+}
+
+
+form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+
+form textarea {
+    resize: vertical;
+    height: 100px;
+}
+
+form select {
+    background-color: #fff;
+}
+
+
+form::before {
+    content: "Contact Form";
+    display: block;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+<form action = "http://localhost:5000/confirmation" method = "post">
+    Name:<input type="text" name="name" required><br><br>
+    Email:<input type="email" name="email" required><br><br>
+    Phone Number:<input type="tel" name="phone" required><br><br>
+    Message:<textarea name="message" required></textarea><br><br>
+    Subject:<select name="subject" required>
+        <option>GUIPROG</option>
+        <option>IPTECH</option>>
+        <option>AWEBDES</option>>
+        <option>INFOMAN</option>>
+    </select><br><br>
+    Preferred Contact Method:<input type="checkbox" value="Email" name="preferred">Email<br>
+    <input type="checkbox" value="Phone" name="preferred">Phone<br>
+    <input type="checkbox" value="Both" name="preferred">Both<br><br>
+    <input type="checkbox" name="agree" required> I Agree the Terms and Condition<br>
+
+    <button type="submit" value="submit">Submit</button>
+
+
+</form>
+</body>
+</html>

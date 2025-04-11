@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+
+
+.card {
+ width: 200px;
+ height: 260px;
+ background: white;
+ border-radius: 10px;
+ transition: border-radius 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.shadow {
+ box-shadow: inset 0 -3em 3em rgba(0,0,0,0.1),
+             0 0  0 2px rgb(190, 190, 190),
+             0.3em 0.3em 1em rgba(0,0,0,0.3);
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="card shadow">
+
+    <p>Name:{{request.form.name}}</p>
+    <p>Email:{{request.form.email}}</p>
+    <p>Phone:{{request.form.phone}}</p>
+    <p>Message:{{request.form.message}}</p>
+    <p>Subject:{{request.form.subject}}</p>
+    <p>Preferred:{{request.form.preferred}}</p>
+    </div>
+</body>
+</html>
