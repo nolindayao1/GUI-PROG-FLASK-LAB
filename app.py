@@ -2,22 +2,23 @@ from flask import Flask, request, render_template
 
 app = Flask(__name__)
 
-@app.route('/', methods=['GET'])
+@app.route('/')
 def contact():
     return render_template('contact_form.html')
 
 @app.route('/confirmation', methods=['POST'])
 def confirm():
-    name = request.form.get('name')
-    email = request.form.get('email')
-    phone = request.form.get('phone')
-    message = request.form.get('message')
-    subject = request.form.get('subject')
-    preferred = request.form.get('preferred')
-    agreement = request.form.get('agreement')
+    if request.method == "POST":
+        name = request.form['name']
+        email = request.form['email']
+        phone = request.form['phone']
+        message = request.form['message']
+        subject = request.form['subject']
+        preferred = request.form['preferred']
+        agreement = request.form['agreement']
 
-    return render_template('confirmation.html', name=name, email=email, phone=phone,
-                           message=message, subject=subject, preferred=preferred, agreement=agreement)
+        return render_template('confirmation.html', name=name, email=email, phone=phone,
+                            message=message, subject=subject, preferred=preferred, agreement=agreement)
 
 if __name__ == '__main__':
     app.run(debug=True)
